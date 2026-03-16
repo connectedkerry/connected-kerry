@@ -25,8 +25,8 @@ permalink: /submit/
 
         <!-- Form – uses Netlify Forms for static site handling, or can be replaced with Formspree -->
         <div class="form-card">
-          <form name="submit-example" method="POST" data-netlify="true" action="/submit/thanks/">
-
+<form name="submit-example" method="POST" data-netlify="true" action="/submit/thanks/">
+  <input type="hidden" name="form-name" value="submit-example">
             <div class="form-group">
               <label for="location">Location</label>
               <input class="form-control" type="text" id="location" name="location" placeholder="e.g. Killorglin, Cahersiveen, near Ballyheigue…" required>
