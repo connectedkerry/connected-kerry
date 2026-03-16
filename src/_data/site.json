@@ -20,6 +20,7 @@
       "title": "Invisible Stops",
       "icon": "stop",
       "colour": "blue",
+      "status": "live",
       "summary": "Bus stops that exist in official systems but are not clearly marked on the street.",
       "definition": "A bus stop can appear in every journey planner and timetable database while being completely unmarked at street level — no pole, no sign, no shelter. Passengers rely on local knowledge or guesswork to find them."
     },
@@ -28,6 +29,7 @@
       "title": "Invisible Journeys",
       "icon": "journey",
       "colour": "green",
+      "status": "coming-soon",
       "summary": "Trips that are difficult or impossible without access to a private car.",
       "definition": "Many everyday journeys in Kerry — to work, hospital, school, or a shop — are straightforward by car and very difficult without one. These journeys are invisible in transport planning because they are rarely counted or mapped."
     },
@@ -36,6 +38,7 @@
       "title": "Invisible Routes",
       "icon": "route",
       "colour": "blue",
+      "status": "coming-soon",
       "summary": "Places where people already walk or cycle but infrastructure does not recognise those routes.",
       "definition": "Across Kerry, people walk and cycle along roads and paths that official systems do not recognise as active travel routes. Without recognition, these routes receive no maintenance priority, no safety improvements, and no counting."
     },
@@ -44,6 +47,7 @@
       "title": "Invisible Places",
       "icon": "place",
       "colour": "green",
+      "status": "coming-soon",
       "summary": "Destinations that people need to reach but that are poorly connected by transport.",
       "definition": "Hospitals, schools, employment centres, and town centres are destinations people need to access regularly. When public transport connections are weak or absent, access becomes dependent entirely on car ownership."
     },
@@ -52,6 +56,7 @@
       "title": "Invisible People",
       "icon": "person",
       "colour": "amber",
+      "status": "coming-soon",
       "summary": "Transport systems often assume everyone drives.",
       "definition": "Transport infrastructure is frequently designed around the assumption that users drive. This leaves older residents, children, people with disabilities, and those without access to a car facing barriers that are rarely acknowledged in planning."
     },
@@ -60,6 +65,7 @@
       "title": "Invisible Delivery",
       "icon": "delivery",
       "colour": "blue",
+      "status": "coming-soon",
       "summary": "Transport improvements that are planned but not yet visible locally.",
       "definition": "Funding is announced, projects are approved, and improvements are planned — but on the ground, nothing changes for months or years. The gap between announcement and delivery is rarely tracked or made visible to communities."
     },
@@ -68,6 +74,7 @@
       "title": "Invisible Benefits",
       "icon": "benefit",
       "colour": "green",
+      "status": "coming-soon",
       "summary": "The social and economic benefits of better local transport that are often overlooked.",
       "definition": "Better local transport creates social and economic value that is rarely measured or communicated. Household cost savings, improved access to employment, reduced isolation, and local business benefits are all part of the case for investment."
     }

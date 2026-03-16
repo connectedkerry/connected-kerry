@@ -16,6 +16,7 @@ permalink: /campaigns/
   <div class="container">
     <div class="campaigns-grid">
       {% for campaign in site.campaigns %}
+      {% if campaign.status == "live" %}
       <a href="/campaigns/{{ campaign.slug }}/" class="campaign-card">
         <div class="campaign-card-top">
           <div class="campaign-icon campaign-icon--{{ campaign.colour }}">
@@ -42,6 +43,32 @@ permalink: /campaigns/
           </svg>
         </div>
       </a>
+
+      {% else %}
+      <div class="campaign-card campaign-card--soon">
+        <div class="campaign-card-top">
+          <div class="campaign-icon campaign-icon--{{ campaign.colour }}" style="opacity:0.45;">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+              <circle cx="11" cy="11" r="4" stroke="currentColor" stroke-width="1.5"/>
+              <line x1="11" y1="3"  x2="11" y2="7"  stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="11" y1="15" x2="11" y2="19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="3"  y1="11" x2="7"  y2="11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              <line x1="15" y1="11" x2="19" y2="11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <span class="campaign-tag">Coming soon</span>
+            <h3 style="color:var(--grey-500);">{{ campaign.title }}</h3>
+          </div>
+        </div>
+        <div class="campaign-card-body">
+          <p style="color:var(--grey-400);">{{ campaign.summary }}</p>
+        </div>
+        <div class="campaign-card-footer" style="color:var(--grey-400);">
+          In preparation
+        </div>
+      </div>
+      {% endif %}
       {% endfor %}
     </div>
   </div>
