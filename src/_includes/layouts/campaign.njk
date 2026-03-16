@@ -1,0 +1,38 @@
+---
+layout: layouts/base.njk
+---
+
+{% for campaign in site.campaigns %}
+  {% if campaign.slug == campaignSlug %}
+
+<section class="campaign-header network-bg">
+  <div class="container">
+    <a href="/campaigns/" class="campaign-back">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <path d="M13 8H3M7 4L3 8L7 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      All campaigns
+    </a>
+    <div class="breadcrumb">
+      <a href="/">Home</a>
+      <span class="breadcrumb-sep">›</span>
+      <a href="/campaigns/">Campaigns</a>
+      <span class="breadcrumb-sep">›</span>
+      <span>{{ campaign.title }}</span>
+    </div>
+    <h1>{{ campaign.title }}</h1>
+    <p class="definition">{{ campaign.definition }}</p>
+  </div>
+  <div class="campaign-header-bar bar--{{ campaign.colour }}"></div>
+</section>
+
+<section class="section">
+  <div class="container container--mid">
+    <div class="prose">
+      {{ content | safe }}
+    </div>
+  </div>
+</section>
+
+  {% endif %}
+{% endfor %}

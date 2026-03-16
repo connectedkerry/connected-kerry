@@ -1,0 +1,38 @@
+---
+layout: layouts/base.njk
+title: The Invisible Framework
+description: Seven campaign themes exploring what is hard to see in County Kerry's transport system.
+---
+
+<section class="page-header network-bg">
+  <div class="container">
+    <h1>The Invisible Framework</h1>
+    <p>Transport systems work best when the basics are clearly visible. This framework identifies seven areas where visibility is currently lacking across County Kerry.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container--mid">
+
+    <div class="prose" style="margin-bottom: var(--space-12);">
+      <p>The concept behind this initiative is straightforward: many transport issues in Kerry are not secret or hidden intentionally — they are simply hard to see. Bus stops exist in databases but not on streets. Routes are used by people every day but are not recognised in infrastructure. Projects are funded and planned but are not yet visible on the ground.</p>
+      <p>By naming these categories of invisibility, we can have more precise conversations about what the problems actually are, what practical improvements would look like, and how progress can be measured over time.</p>
+    </div>
+
+    <div class="framework-list">
+      {% for campaign in site.campaigns %}
+      <a href="/campaigns/{{ campaign.slug }}/" class="framework-item">
+        <div class="framework-item-num">{{ loop.index }}</div>
+        <div>
+          <h3>{{ campaign.title }}</h3>
+          <p>{{ campaign.definition }}</p>
+        </div>
+        <svg style="flex-shrink:0;margin-left:auto;color:var(--grey-300)" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M4 10H16M12 5L17 10L12 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>

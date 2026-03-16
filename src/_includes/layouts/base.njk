@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="{{ description or site.site.description }}">
+  <title>{% if title %}{{ title }} | {% endif %}{{ site.site.title }}</title>
+
+  <!-- Preconnect for fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="header-inner">
+
+        <a href="/" class="site-logo" aria-label="Connected Kerry Initiative home">
+          <!-- Network node logo mark -->
+          <svg class="logo-mark" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="18" cy="18" r="18" fill="#1a4270"/>
+            <!-- Network nodes and lines -->
+            <circle cx="18" cy="9" r="3" fill="#7ab3d8"/>
+            <circle cx="28" cy="24" r="3" fill="#7ab3d8"/>
+            <circle cx="8"  cy="24" r="3" fill="#7ab3d8"/>
+            <circle cx="18" cy="20" r="4" fill="#4a8fc4"/>
+            <line x1="18" y1="12" x2="18" y2="16" stroke="#4a8fc4" stroke-width="1.5"/>
+            <line x1="25.4" y1="22.1" x2="21.5" y2="18.5" stroke="#4a8fc4" stroke-width="1.5"/>
+            <line x1="10.6" y1="22.1" x2="14.5" y2="18.5" stroke="#4a8fc4" stroke-width="1.5"/>
+          </svg>
+
+          <div class="logo-text">
+            <span class="name">Connected Kerry</span>
+            <span class="tagline">{{ site.site.tagline }}</span>
+          </div>
+        </a>
+
+        <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+          {% for item in site.nav %}
+            <a href="{{ item.url }}"
+               {% if page.url == item.url %}aria-current="page"{% endif %}>
+              {{ item.label }}
+            </a>
+          {% endfor %}
+          <a href="/submit/" class="nav-cta">Submit an example</a>
+        </nav>
+
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="site-nav">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+            <rect y="4" width="22" height="2" rx="1" fill="currentColor"/>
+            <rect y="10" width="22" height="2" rx="1" fill="currentColor"/>
+            <rect y="16" width="22" height="2" rx="1" fill="currentColor"/>
+          </svg>
+        </button>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content">
+    {{ content | safe }}
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <svg class="logo-mark" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="18" cy="18" r="18" fill="#1a4270"/>
+            <circle cx="18" cy="9" r="3" fill="#7ab3d8"/>
+            <circle cx="28" cy="24" r="3" fill="#7ab3d8"/>
+            <circle cx="8"  cy="24" r="3" fill="#7ab3d8"/>
+            <circle cx="18" cy="20" r="4" fill="#4a8fc4"/>
+            <line x1="18" y1="12" x2="18" y2="16" stroke="#4a8fc4" stroke-width="1.5"/>
+            <line x1="25.4" y1="22.1" x2="21.5" y2="18.5" stroke="#4a8fc4" stroke-width="1.5"/>
+            <line x1="10.6" y1="22.1" x2="14.5" y2="18.5" stroke="#4a8fc4" stroke-width="1.5"/>
+          </svg>
+          <p>Highlighting transport gaps across County Kerry and exploring practical improvements for everyday travel.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Campaigns</h4>
+          <ul>
+            {% for campaign in site.campaigns %}
+              <li><a href="/campaigns/{{ campaign.slug }}/">{{ campaign.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="/framework/">The Framework</a></li>
+            <li><a href="/stories/">Stories</a></li>
+            <li><a href="/map/">Map</a></li>
+            <li><a href="/representatives/">For Representatives</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Get involved</h4>
+          <ul>
+            <li><a href="/submit/">Submit an example</a></li>
+            <li><a href="/about/">About this initiative</a></li>
+            <li><a href="mailto:{{ site.site.email }}">Contact</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© {{ "" | year }} Connected Kerry Initiative. All observations are made in good faith.</span>
+        <span>A public-interest transport project for County Kerry</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

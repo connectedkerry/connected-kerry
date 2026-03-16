@@ -1,0 +1,103 @@
+---
+layout: layouts/base.njk
+title: Submit an Example
+description: Share a transport gap or issue you have spotted in County Kerry.
+permalink: /submit/
+---
+
+<section class="page-header network-bg">
+  <div class="container">
+    <h1>Submit an example</h1>
+    <p>If you have spotted a transport gap or issue in County Kerry, we would like to hear about it.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container container--mid">
+
+    <div style="display:grid; grid-template-columns: 2fr 1fr; gap:var(--space-12); align-items:start;">
+
+      <div>
+        <div class="prose" style="margin-bottom:var(--space-8);">
+          <p>You do not need to be an expert or have professional experience to contribute. An observation, a photograph, or a short account of a journey is valuable. Submissions may be used to document examples on the site, added to the map, or used to inform briefing notes for representatives.</p>
+          <p>All submissions are reviewed before publication. You will only be identified by name or location if you explicitly consent to this.</p>
+        </div>
+
+        <!-- Form – uses Netlify Forms for static site handling, or can be replaced with Formspree -->
+        <div class="form-card">
+          <form name="submit-example" method="POST" data-netlify="true" action="/submit/thanks/">
+
+            <div class="form-group">
+              <label for="location">Location</label>
+              <input class="form-control" type="text" id="location" name="location" placeholder="e.g. Killorglin, Cahersiveen, near Ballyheigue…" required>
+              <p class="hint">Town, village, townland, or nearest landmark. Approximate is fine.</p>
+            </div>
+
+            <div class="form-group">
+              <label for="category">Category</label>
+              <select class="form-control" id="category" name="category" required>
+                <option value="" disabled selected>Select a campaign theme</option>
+                <option value="invisible-stops">Invisible Stops – unmarked bus stops</option>
+                <option value="invisible-journeys">Invisible Journeys – difficult without a car</option>
+                <option value="invisible-routes">Invisible Routes – unrecognised walking or cycling routes</option>
+                <option value="invisible-places">Invisible Places – destinations hard to reach by transport</option>
+                <option value="invisible-people">Invisible People – barriers for specific groups</option>
+                <option value="invisible-delivery">Invisible Delivery – announced project not yet visible</option>
+                <option value="invisible-benefits">Invisible Benefits – overlooked positive impact</option>
+                <option value="other">Other / not sure</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="description">Description</label>
+              <textarea class="form-control" id="description" name="description" rows="6" placeholder="Describe what you have observed or experienced…" required></textarea>
+              <p class="hint">As much or as little detail as you have. A single paragraph is enough to start.</p>
+            </div>
+
+            <div class="form-group">
+              <label for="contact">Your contact details <span style="font-weight:var(--weight-regular); color:var(--color-text-muted);">(optional)</span></label>
+              <input class="form-control" type="text" id="contact" name="contact" placeholder="Email address or phone number">
+              <p class="hint">Only used if we need to follow up. Not published or shared.</p>
+            </div>
+
+            <div class="form-group" style="margin-bottom:0;">
+              <button type="submit" class="btn btn-solid" style="width:100%; justify-content:center; padding:var(--space-4);">Submit your example</button>
+              <p class="hint" style="margin-top:var(--space-3); text-align:center;">All submissions are reviewed before use. We will not publish your name without consent.</p>
+            </div>
+
+          </form>
+        </div>
+      </div>
+
+      <div style="position:sticky; top:calc(64px + var(--space-8));">
+        <div style="background:var(--grey-50); border:1px solid var(--color-border); border-radius:var(--radius-lg); padding:var(--space-6); margin-bottom:var(--space-5);">
+          <h3 style="font-size:var(--text-base); font-weight:var(--weight-semi); margin-bottom:var(--space-4);">What makes a good submission?</h3>
+          <ul style="list-style:none; display:flex; flex-direction:column; gap:var(--space-3);">
+            <li style="display:flex; gap:var(--space-3); font-size:var(--text-sm);">
+              <span style="color:var(--green-500); flex-shrink:0;">✓</span>
+              <span>A specific location, not just a general area</span>
+            </li>
+            <li style="display:flex; gap:var(--space-3); font-size:var(--text-sm);">
+              <span style="color:var(--green-500); flex-shrink:0;">✓</span>
+              <span>What you observed or experienced</span>
+            </li>
+            <li style="display:flex; gap:var(--space-3); font-size:var(--text-sm);">
+              <span style="color:var(--green-500); flex-shrink:0;">✓</span>
+              <span>When it happened (approximate is fine)</span>
+            </li>
+            <li style="display:flex; gap:var(--space-3); font-size:var(--text-sm);">
+              <span style="color:var(--green-500); flex-shrink:0;">✓</span>
+              <span>Photos if you have them (send by email after submitting)</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="callout">
+          <strong>Prefer to email?</strong>
+          <p>You can also send examples directly to <a href="mailto:{{ site.site.email }}">{{ site.site.email }}</a> — including photographs.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

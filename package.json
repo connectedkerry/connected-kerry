@@ -1,0 +1,12 @@
+{
+  "name": "connected-kerry",
+  "version": "1.0.0",
+  "description": "Connected Kerry Initiative – static website",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+}
